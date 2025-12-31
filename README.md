@@ -1,98 +1,68 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Set Up Nest
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+You have to build a microservice that exposes a REST API to manage users and pokemons.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### Features
 
-## Description
+- Create a new Users with their Pokemon IDs.
+- Get Users list.
+- Get User by ID and gathering pokemons names from Poke API.
+- Update User.
+- Delete User.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Pre-Requisites
 
-## Project setup
+- Docker installed without SUDO permissions.
+- Docker Compose installed without SUDO permissions.
+- Ports free: 3000 and 5432.
 
-```bash
-$ npm install
+## How to run the app
+
+```
+chmod 711 ./up_dev.sh
+./up_dev.sh
+
 ```
 
-## Compile and run the project
+## How to run the tests
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```
+chmod 711 ./up_test.sh
+./up_test.sh
 ```
 
-## Run tests
+## Areas to improve
 
-```bash
-# unit tests
-$ npm run test
+- Data should be moved from tests to an external file
+- Generic method should be used to mock endpoints
+- Error handling could be improved (I.E handle already existing user error)
+- A seed migration would be useful to have an already working app with data
+- The ORM is being used with synchronize instead of migrations. Migrations would be the best option for productions
 
-# e2e tests
-$ npm run test:e2e
+## Errors to be fixed
 
-# test coverage
-$ npm run test:cov
-```
+- Docker app is not running properly
 
-## Deployment
+## Technologies used
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+- NestJS: 11
+- Node: 20.11.1
+- TypeORM
+- PostgreSQL
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## Desicions made
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+- Clean Architecture: To be able to handle further changes in the future in a proper way.
+- TypeORM: Because it is the already integrated ORM in the nest Framework and it is the most popular ORM so it is easy to find fixes and people that know how to use it.
+- Docker: To make portable
+- Jest/Testing/E2E: Jest is the most popular testing framework of JS. Same argument as above. E2E testing was done because it is unless to alwayse test every single part.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+That's why if the controller provide the proper answer the test has passed.
 
-## Resources
+## Route
 
-Check out a few resources that may come in handy when working with NestJS:
+- API Swagger: [API Swagger](http://localhost:3000/api)
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Env vars should be defined
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- To find an example of values you can use the .env.example file
