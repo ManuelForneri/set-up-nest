@@ -37,9 +37,9 @@ jobs:
           root: ~/project
           paths: .
       - coveralls/upload:
-        parallel: true
-        flag_name: Test 1
-        verbose: true
+          parallel: true
+          flag_name: Test 1
+          verbose: true
 workflows:
   build_and_test:
     jobs:
