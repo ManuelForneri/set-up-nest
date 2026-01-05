@@ -28,7 +28,7 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm run test:e2e
+          command: COVERALLS_REPO_TOKEN=qDLfbs2WKPGziYDp3dcGJv9WMovimcGtd npm run test:cov
           name: Run tests
       - run:
           command: npm run build
