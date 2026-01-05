@@ -4,7 +4,13 @@ You have to build a microservice that exposes a REST API to manage users and pok
 
 ### Badges
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ManuelForneri/set-up-nest/tree/main.svg?style=svg&circle-token=CCIPRJ_Wp5BmdE3RFjFDAyyPEXcwB_d38043eb7cbc136e3f4030ab5093b5a2f6e08880)](https://dl.circleci.com/status-badge/redirect/gh/ManuelForneri/set-up-nest/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ManuelForneri/set-up-nest/tree/main.svg?style=svg&circle-token=CCIPRJ_Wp5BmdE3RFjFDAyyPEXcwB_d38043eb7cbc136e3f4030ab5093b5a2f6e08880)](https://dl.circleci.com/status-badge/redirect/gh/ManuelForneri/set-up-nest/tree/main)`
+
+### How to run locally coveralls
+
+```
+COVERALLS_REPO_TOKEN=qDLfbs2WKPGziYDp3dcGJv9WMovimcGtd npm run test:cov
+```
 
 ### Features
 
