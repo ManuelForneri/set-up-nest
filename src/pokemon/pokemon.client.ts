@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import axios from 'axios';
 
 export interface PokemonDetail {
@@ -19,8 +19,7 @@ export class PokemonClient {
         name: response.data.name,
       };
     } catch (error) {
-      console.error(`Error fetching Pokemon with id ${id}`);
-      return null;
+      throw new NotFoundException(`User whit ID: ${id} not found`);
     }
   }
   async getPokemonDetailsById(ids: number[]): Promise<PokemonDetail[] | null> {

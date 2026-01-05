@@ -6,6 +6,8 @@ You have to build a microservice that exposes a REST API to manage users and pok
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/ManuelForneri/set-up-nest/tree/main.svg?style=svg&circle-token=CCIPRJ_Wp5BmdE3RFjFDAyyPEXcwB_d38043eb7cbc136e3f4030ab5093b5a2f6e08880)](https://dl.circleci.com/status-badge/redirect/gh/ManuelForneri/set-up-nest/tree/main)`
 
+[![Coverage Status](https://coveralls.io/repos/github/ManuelForneri/set-up-nest/badge.svg?branch=main)](https://coveralls.io/github/ManuelForneri/set-up-nest?branch=main)
+
 ### How to run locally coveralls
 
 ```
