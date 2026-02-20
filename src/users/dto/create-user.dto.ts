@@ -17,6 +17,13 @@ export class CreateUserDto {
   password: string;
 
   @ApiProperty({
+    description: 'The favourite pokemon of the user',
+    example: 'Pikachu',
+    required: false,
+  })
+  favouritePokemon: string;
+
+  @ApiProperty({
     description: 'The pokemons of the user',
     example: [1, 4, 7],
   })

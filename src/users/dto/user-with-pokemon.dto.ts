@@ -27,6 +27,13 @@ export class UserWithPokemonDto extends User {
   })
   declare password: string;
 
+  @ApiProperty({
+    description: 'The favourite pokemon of the user',
+    example: 'Pikachu',
+    required: false,
+  })
+  declare favouritePokemon: string;
+
   @ApiHideProperty()
   declare pokemonsIds: number[];
 
