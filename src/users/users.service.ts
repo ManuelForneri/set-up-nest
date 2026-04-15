@@ -14,7 +14,7 @@ export class UsersService {
   async findById(id: number): Promise<UserWithPokemonDto> {
     const user = await this.usersRepository.findByIdWithPokemons(id);
     if (!user) {
-      throw new NotFoundException(`User whit ID: ${id} not found`);
+      throw new NotFoundException(`User with ID: ${id} not found`);
     }
     return user;
   }
@@ -27,7 +27,7 @@ export class UsersService {
   async update(id: number, userData: Partial<User>): Promise<User> {
     const updatedUser = await this.usersRepository.update(id, userData);
     if (!updatedUser) {
-      throw new NotFoundException(`User whit ID: ${id} not found`);
+      throw new NotFoundException(`User with ID: ${id} not found`);
     }
     return updatedUser;
   }

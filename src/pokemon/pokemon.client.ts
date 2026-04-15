@@ -19,7 +19,7 @@ export class PokemonClient {
         name: response.data.name,
       };
     } catch (error) {
-      throw new NotFoundException(`User whit ID: ${id} not found`);
+      throw new NotFoundException(`Pokemon with ID: ${id} not found`);
     }
   }
   async getPokemonDetailsById(ids: number[]): Promise<PokemonDetail[] | null> {

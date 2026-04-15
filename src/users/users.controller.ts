@@ -84,7 +84,7 @@ export class UsersController {
   })
   async update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() userData: Partial<User>,
+    @Body() userData: UpdateUserDto,
   ): Promise<User> {
     return this.usersService.update(id, userData);
   }
